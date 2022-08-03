@@ -3,9 +3,12 @@ package com.example.orgs.ui.activity
 import android.app.Activity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.orgs.R
+import com.example.orgs.model.Produto
 import com.example.orgs.ui.recyclerview.adapter.ListaProdutosAdapter
+import java.math.BigDecimal
 
 class MainActivity : Activity() {
 
@@ -25,12 +28,22 @@ class MainActivity : Activity() {
 //        val valor = findViewById<TextView>(R.id.valor)
 //        valor.text = result.toString()
 
-        val recylcerView = findViewById<RecyclerView>(R.id.recycler)
-        recylcerView.adapter = ListaProdutosAdapter()
-
+        val recyclcerView = findViewById<RecyclerView>(R.id.recycler)
+        recyclcerView.adapter = ListaProdutosAdapter(
+            context = this, produtos = listOf(
+                Produto(
+                    nome = "Cesta de Chocolate",
+                    descricao = "Choquito, prestigio e trento",
+                    valor = BigDecimal("25.64")
+                ),
+                Produto(
+                    nome = "Cesta Basica",
+                    descricao = "Arroz, Feijão e Mistura",
+                    valor = BigDecimal("50.64")
+                ),
+            ))
+//        recyclcerView.layoutManager = LinearLayoutManager(this)//indica que ele será o gerenciador do layout
     }
-
-
 
 
 }
