@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.FormProdutoActivity">
+    android:fillViewport="true">
+    <!--fillViewPort faz com que a ScrollView
+    Pegue o espaço total da tela-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.activity.FormProdutoActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/editNome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Nome da cesta"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editDescricao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Descricao da Cesta"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@id/editNome"
+            app:layout_constraintStart_toStartOf="@id/editNome"
+            app:layout_constraintTop_toBottomOf="@id/editNome" />
+
+        <EditText
+            android:id="@+id/edivalor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="valor ex - 19.20"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@id/editNome"
+            app:layout_constraintStart_toStartOf="@id/editNome"
+            app:layout_constraintTop_toBottomOf="@id/editDescricao" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Salvar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edivalor"
+            app:layout_constraintVertical_bias="1" />
+        <!--bias seria para defenir se ele ficara mais perto
+        do topo ou final dos seus constraint-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
